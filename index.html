@@ -554,6 +554,11 @@
       document.querySelectorAll('[data-ja][data-en]').forEach(el => {
         el.innerHTML = el.getAttribute('data-' + lang);
       });
+
+      // プライバシーポリシーリンクに lang パラメータを付与
+      document.querySelectorAll('a[href*="privacy.html"]').forEach(a => {
+        a.href = lang === 'en' ? 'privacy.html?lang=en' : 'privacy.html';
+      });
     }
 
     // ページ読み込み時に ?lang=en を検出

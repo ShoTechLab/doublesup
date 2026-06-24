@@ -146,6 +146,11 @@
       document.querySelectorAll('#collect-list li').forEach(li => {
         li.textContent = li.getAttribute('data-' + lang);
       });
+
+      // トップへ戻るリンクに lang パラメータを付与
+      document.querySelectorAll('a[href*="index.html"]').forEach(a => {
+        a.href = lang === 'en' ? 'index.html?lang=en' : 'index.html';
+      });
     }
 
     (function () {
