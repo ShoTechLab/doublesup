@@ -17,10 +17,38 @@
       padding: 32px 24px;
       text-align: center;
     }
-    header h1 { font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; }
-    header p { font-size: 0.9rem; opacity: 0.85; }
+    header h1 { font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; }
     header a { color: rgba(255,255,255,0.85); font-size: 0.9rem; text-decoration: none; }
     header a:hover { text-decoration: underline; }
+    .header-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 12px;
+    }
+    .lang-toggle {
+      display: flex;
+      background: rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .lang-btn {
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: none;
+      background: transparent;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.7);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lang-btn.active {
+      background: #fff;
+      color: #006bfd;
+    }
     main {
       max-width: 680px;
       margin: 40px auto;
@@ -33,85 +61,97 @@
       margin-bottom: 20px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.07);
     }
-    h2 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #006bfd;
-      margin-bottom: 12px;
-    }
-    p {
-      font-size: 0.95rem;
-      line-height: 1.8;
-      color: #444;
-      margin-bottom: 10px;
-    }
+    h2 { font-size: 1.05rem; font-weight: 700; color: #006bfd; margin-bottom: 12px; }
+    p { font-size: 0.95rem; line-height: 1.8; color: #444; margin-bottom: 10px; }
     p:last-child { margin-bottom: 0; }
-    ul {
-      margin: 8px 0 10px 20px;
-      font-size: 0.95rem;
-      line-height: 1.8;
-      color: #444;
-    }
-    .updated {
-      font-size: 0.85rem;
-      color: #999;
-      text-align: right;
-      margin-bottom: 24px;
-    }
+    ul { margin: 8px 0 10px 20px; font-size: 0.95rem; line-height: 1.8; color: #444; }
+    .updated { font-size: 0.85rem; color: #999; text-align: right; margin-bottom: 24px; }
     a { color: #006bfd; }
-    footer {
-      text-align: center;
-      padding: 24px;
-      font-size: 0.85rem;
-      color: #999;
-    }
+    footer { text-align: center; padding: 24px; font-size: 0.85rem; color: #999; }
     footer a { color: #006bfd; text-decoration: none; }
   </style>
 </head>
 <body>
   <header>
-    <h1>プライバシーポリシー</h1>
-    <p><a href="index.html">← ダブルスアップ トップへ戻る</a></p>
+    <h1 data-ja="プライバシーポリシー" data-en="Privacy Policy">プライバシーポリシー</h1>
+    <div class="header-bottom">
+      <a href="index.html" data-ja="← ダブルスアップ トップへ戻る" data-en="← Back to DoublesUp">← ダブルスアップ トップへ戻る</a>
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('ja')">JP</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
   </header>
 
   <main>
-    <p class="updated">最終更新日：2026年6月22日</p>
+    <p class="updated" data-ja="最終更新日：2026年6月24日" data-en="Last updated: June 24, 2026">最終更新日：2026年6月24日</p>
 
     <div class="card">
-      <h2>基本方針</h2>
-      <p>ShoTechLab（以下「当社」）は、ダブルスアップ（以下「本アプリ」）におけるユーザーのプライバシーを尊重し、個人情報の保護に努めます。</p>
+      <h2 data-ja="基本方針" data-en="Overview">基本方針</h2>
+      <p data-ja="ShoTechLab（以下「当社」）は、ダブルスアップ（以下「本アプリ」）におけるユーザーのプライバシーを尊重し、個人情報の保護に努めます。" data-en="ShoTechLab (&quot;we&quot;) respects the privacy of our users and is committed to protecting personal information in connection with DoublesUp (&quot;the App&quot;).">ShoTechLab（以下「当社」）は、ダブルスアップ（以下「本アプリ」）におけるユーザーのプライバシーを尊重し、個人情報の保護に努めます。</p>
     </div>
 
     <div class="card">
-      <h2>収集する情報</h2>
-      <p>本アプリは完全オフラインで動作し、氏名・メールアドレス・位置情報などの個人情報を収集・送信しません。</p>
-      <p>ただし、アプリの改善を目的として、以下の匿名の利用状況データを収集しています。</p>
-      <ul>
-        <li>画面の遷移・機能の利用状況（匿名）</li>
-        <li>アプリのバージョン・端末の種類（機種名・OSバージョン）</li>
+      <h2 data-ja="収集する情報" data-en="Information We Collect">収集する情報</h2>
+      <p data-ja="本アプリは完全オフラインで動作し、氏名・メールアドレス・位置情報などの個人情報を収集・送信しません。" data-en="The App operates fully offline and does not collect or transmit personal information such as names, email addresses, or location data.">本アプリは完全オフラインで動作し、氏名・メールアドレス・位置情報などの個人情報を収集・送信しません。</p>
+      <p data-ja="ただし、アプリの改善を目的として、以下の匿名の利用状況データを収集しています。" data-en="However, we collect the following anonymous usage data to improve the App:">ただし、アプリの改善を目的として、以下の匿名の利用状況データを収集しています。</p>
+      <ul id="collect-list">
+        <li data-ja="画面の遷移・機能の利用状況（匿名）" data-en="Screen navigation and feature usage (anonymous)">画面の遷移・機能の利用状況（匿名）</li>
+        <li data-ja="アプリのバージョン・端末の種類（機種名・OSバージョン）" data-en="App version and device information (model name, OS version)">アプリのバージョン・端末の種類（機種名・OSバージョン）</li>
       </ul>
-      <p>これらのデータは <a href="https://posthog.com" target="_blank" rel="noopener">PostHog</a> を通じて収集されており、個人を特定できる情報は一切含まれません。</p>
+      <p><span data-ja="これらのデータは " data-en="This data is collected via ">これらのデータは </span><a href="https://posthog.com" target="_blank" rel="noopener">PostHog</a><span data-ja=" を通じて収集されており、個人を特定できる情報は一切含まれません。" data-en=" and does not include any personally identifiable information."> を通じて収集されており、個人を特定できる情報は一切含まれません。</span></p>
     </div>
 
     <div class="card">
-      <h2>データの保存</h2>
-      <p>本アプリが保存するプレイヤー名・試合履歴などのデータは、すべてお使いの端末内にのみ保存されます。外部サーバーへのアップロードは行いません。</p>
+      <h2 data-ja="データの保存" data-en="Data Storage">データの保存</h2>
+      <p data-ja="本アプリが保存するプレイヤー名・試合履歴などのデータは、すべてお使いの端末内にのみ保存されます。外部サーバーへのアップロードは行いません。" data-en="All data stored by the App, such as player names and match history, is saved only on your device. No data is uploaded to external servers.">本アプリが保存するプレイヤー名・試合履歴などのデータは、すべてお使いの端末内にのみ保存されます。外部サーバーへのアップロードは行いません。</p>
     </div>
 
     <div class="card">
-      <h2>第三者への提供</h2>
-      <p>収集した情報を第三者に販売・提供することはありません。ただし、法令に基づく開示請求があった場合はこの限りではありません。</p>
+      <h2 data-ja="第三者への提供" data-en="Third-Party Disclosure">第三者への提供</h2>
+      <p data-ja="収集した情報を第三者に販売・提供することはありません。ただし、法令に基づく開示請求があった場合はこの限りではありません。" data-en="We do not sell or share collected information with third parties, except where required by law.">収集した情報を第三者に販売・提供することはありません。ただし、法令に基づく開示請求があった場合はこの限りではありません。</p>
     </div>
 
     <div class="card">
-      <h2>お問い合わせ</h2>
-      <p>プライバシーポリシーに関するご質問は、以下までご連絡ください。</p>
+      <h2 data-ja="お問い合わせ" data-en="Contact">お問い合わせ</h2>
+      <p data-ja="プライバシーポリシーに関するご質問は、以下までご連絡ください。" data-en="If you have any questions about this Privacy Policy, please contact us at:">プライバシーポリシーに関するご質問は、以下までご連絡ください。</p>
       <p><a href="mailto:support.shotechlab@gmail.com">support.shotechlab@gmail.com</a></p>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2026 ShoTechLab &nbsp;|&nbsp; <a href="index.html">トップ</a></p>
+    <p>&copy; 2026 ShoTechLab &nbsp;|&nbsp; <a href="index.html" data-ja="トップ" data-en="Home">トップ</a></p>
   </footer>
+
+  <script>
+    function setLang(lang, pushState = true) {
+      document.documentElement.lang = lang;
+      document.title = lang === 'ja' ? 'プライバシーポリシー - ダブルスアップ' : 'Privacy Policy - DoublesUp';
+
+      if (pushState) {
+        const url = new URL(window.location.href);
+        lang === 'en' ? url.searchParams.set('lang', 'en') : url.searchParams.delete('lang');
+        history.pushState(null, '', url.toString());
+      }
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === (lang === 'ja' ? 'jp' : 'en'));
+      });
+
+      document.querySelectorAll('[data-ja][data-en]').forEach(el => {
+        el.innerHTML = el.getAttribute('data-' + lang);
+      });
+
+      // リスト項目
+      document.querySelectorAll('#collect-list li').forEach(li => {
+        li.textContent = li.getAttribute('data-' + lang);
+      });
+    }
+
+    (function () {
+      const lang = new URLSearchParams(window.location.search).get('lang') === 'en' ? 'en' : 'ja';
+      setLang(lang, false);
+    })();
+  </script>
 </body>
 </html>
